@@ -13,11 +13,12 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Books Info',
+            title: 'BooksInfo',
             template: path.resolve(__dirname, './src/index.html'),
             chunks: ['main']
         }),
         new HtmlWebpackPlugin({  // Also generate a details.html
+            title: 'BooksInfo',
             filename: 'details.html',
             template: path.resolve(__dirname, './src/details.html'),
             chunks: ['details']
