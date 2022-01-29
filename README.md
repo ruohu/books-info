@@ -67,7 +67,7 @@ Follow these simple steps to get a local copy and run it.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Insert a category (ej. fantasy) and click "Search" button.
+Insert a category (eg. fantasy) and click "Search" button.
 Click a book's cover to view the book's details page.
 
 
