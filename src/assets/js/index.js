@@ -12,11 +12,8 @@ const errorMessage = document.querySelector(".error-message");
 
 searchForm.addEventListener("submit", getBooks);
 
-
 // Display a maximum of 50 books
 function showBooksResults(books) {
-    searchResults.style.backgroundColor = "#A8D0E6";
-    searchResults.innerHTML = "";
     
     books.forEach(book => {
         
@@ -54,7 +51,6 @@ function showBooksResults(books) {
 
 function handleSelectedBook(e){
     let target = e.target;
-    console.log(target);
     if(target.matches("img")){
         // target.parentElement is "a" element which contains data-book-key attribute
         openBookDetails(target.parentElement.dataset.bookKey);
@@ -67,11 +63,14 @@ async function requestCategoryBooksData(category){
     const data = await response.json();
 
     let books = data.works;
-    console.log(books);
     if(books && books.length > 0){
+        searchResults.style.backgroundColor = "#A8D0E6";
+        searchResults.innerHTML = "";
         showBooksResults(books);
     }else{
         errorMessage.innerHTML = "No Result ☹️";
+        searchResults.style.backgroundColor = "transparent";
+        searchResults.innerHTML = "";
     }
     
 }
@@ -80,7 +79,7 @@ function getBooks(e){
     e.preventDefault();
     errorMessage.innerHTML = "";
     let inputValue = searchInput.value;
-
+    
     if(inputValue){
         let categoryFormatted = inputValue.replaceAll('-', '_');
         categoryFormatted = categoryFormatted.replaceAll(" ", "_")
@@ -95,7 +94,6 @@ function getBooks(e){
 }
 
 function openBookDetails(selectedBookKey){
-    console.log(selectedBookKey);
     sessionStorage.setItem("bookKey", selectedBookKey );
     window.location = "details.html";
 }

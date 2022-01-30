@@ -25,7 +25,6 @@ function getBookDetails(){
 async function requestBookDetails(bookKey){
     const response = await fetch(OPEN_LIBRARY_BASE_URL + bookKey + ".json");
     const bookDetails = await response.json();
-    console.log(bookDetails);
     if(bookDetails){
         let bookAuthors = await Promise.all(bookDetails.authors.map(getAuthorsName));
         showDetails(bookDetails, bookAuthors);
@@ -45,7 +44,6 @@ function showDetails(book, bookAuthors){
     cover.setAttribute("src", coverUrl);
     bookTitle.innerHTML = book.title;
     authors.innerHTML = bookAuthors.toString();
-
     publishDate.innerHTML = book["first_publish_date"];
     if(book.description?.value){
         description.innerHTML = book.description.value;
