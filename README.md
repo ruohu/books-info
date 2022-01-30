@@ -1,4 +1,4 @@
-# BooksInfo
+# BooksInfo 
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -7,6 +7,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#live-demo">Live Demo</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -28,6 +29,10 @@
 ## About The Project
 
 BooksInfo is a simple application that let the user discover new books of a specific category. 
+
+### Live Demo
+
+Follow the link and try the app online: https://booksinfojs.netlify.app
 
 
 ### Built With
